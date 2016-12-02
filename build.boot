@@ -32,4 +32,4 @@
   (when-let [file (java.io.File. "pom.xml")]
     (vec (map build-edn (build-deps (get-deps file))))))
 
-;(set-env! :dependencies (maven-import))
+(set-env! :dependencies (maven-import))
