@@ -1,7 +1,7 @@
 ; using clojure.data.zip.xml would give better way to parse xml but I do not want
 ; to introduce extra dependency on this stage
 
-(ns boot-maven-interop
+(ns andmed.tools.boot
   {:boot/export-tasks true}
   (require [clojure.xml :as xml :refer [parse]]))
 
@@ -32,4 +32,4 @@
   (when-let [file (java.io.File. "pom.xml")]
     (vec (map build-edn (build-deps (get-deps file))))))
 
-(set-env! :dependencies (maven-import))
+;(set-env! :dependencies (maven-import))
